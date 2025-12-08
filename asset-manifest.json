@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/snakegame-frontend/static/css/main.b771b019.css",
+    "main.js": "/snakegame-frontend/static/js/main.c2b10724.js",
+    "index.html": "/snakegame-frontend/index.html",
+    "main.b771b019.css.map": "/snakegame-frontend/static/css/main.b771b019.css.map",
+    "main.c2b10724.js.map": "/snakegame-frontend/static/js/main.c2b10724.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b771b019.css",
+    "static/js/main.c2b10724.js"
+  ]
+}
