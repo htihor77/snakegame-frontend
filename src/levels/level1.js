@@ -1,0 +1,26 @@
+export const LEVEL_1 = {
+  id: 1,
+  name: "Classic",
+  description: "Master the basics",
+  boardSize: 20,
+  cellSize: 20,
+  baseTick: 150,
+  speedMultiplier: 1,
+  foodScore: 10,
+  theme: {
+    background: "#071b12",
+    snakeHead: "#a1ffb8",
+    snakeBody: "#00c853",
+    food: "#ff6b6b",
+    grid: "#0c2f1a",
+    border: "#4ade80",
+  },
+  features: {
+    wrap: false,
+    obstacles: false,
+    multipleFoods: false,
+    speedBoost: false,
+  },
+  difficulty: 1,
+  maxLevel: false,
+};
