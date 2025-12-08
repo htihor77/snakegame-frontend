@@ -245,6 +245,13 @@ const [running, setRunning] = useState(false);
     }
   }
 
+  const exitGame = () => {
+  if (window.confirm("Are you sure you want to leave the game?")) {
+    window.location.href = "/";
+  }
+};
+
+
   const step = useCallback(() => {
     try {
       setSnake((prev) => {
@@ -464,11 +471,20 @@ const [running, setRunning] = useState(false);
         {sidebarOpen ? "✕" : "☰"}
       </button>
 
+
+
       {/* SIDEBAR */}
       <div style={{
         ...styles.sidebar,
         transform: sidebarOpen ? "translateX(0)" : "translateX(-100%)",
       }}>
+
+        <button
+  style={{ marginTop: 20, background: "#ff5555" }}
+  onClick={exitGame}
+>
+  Exit Game
+</button>
         <div style={styles.sidebarHeader}>
           <h2 style={{ color: "#4ade80", margin: "0 0 5px 0", fontSize: "18px" }}>🐍</h2>
           <p style={{ color: "#96f7c8", fontSize: "11px", margin: 0 }}>Snake Game</p>
@@ -750,7 +766,7 @@ const [running, setRunning] = useState(false);
 
       <style>{`
         * { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; overflow: hidden; }
+        html, body { margin: 0; padding: 0;  background: #0a0f0d; }
         
         @keyframes fadeIn {
           from { opacity: 0; }
@@ -775,7 +791,8 @@ const styles = {
     display: "flex",
     minHeight: "100vh",
     background: "#0a0f0d",
-    overflow: "hidden",
+    overflowX: "hidden",
+  overflowY: "auto",
     fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
   },
   sidebarToggle: {
@@ -955,15 +972,17 @@ const styles = {
     gap: "8px",
   },
   canvas: {
-    background: "#0a0f0d",
-    borderRadius: "10px",
-    border: "2px solid #4ade80",
-    boxShadow: "0 0 25px rgba(74, 222, 128, 0.25), inset 0 0 10px rgba(74, 222, 128, 0.03)",
-    maxWidth: "100%",
-    height: "auto",
-    display: "block",
-    transition: "all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)",
-  },
+  background: "#0a0f0d",
+  borderRadius: "10px",
+  border: "2px solid #4ade80",
+  boxShadow: "0 0 25px rgba(74, 222, 128, 0.25), inset 0 0 10px rgba(74, 222, 128, 0.03)",
+  maxWidth: "100%",
+  maxHeight: "65vh",   // ✅ don’t let canvas be taller than ~65% of screen
+  height: "auto",
+  display: "block",
+  transition: "all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)",
+},
+
   hud: {
     display: "flex",
     gap: "16px",
