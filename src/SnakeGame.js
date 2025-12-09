@@ -182,6 +182,17 @@ const [running, setRunning] = useState(false);
   }, []);
 
   // ===== FUNCTIONS =====
+function isStandalonePWA() {
+  // Android / desktop PWA
+  const isStandaloneDisplay =
+    window.matchMedia &&
+    window.matchMedia("(display-mode: standalone)").matches;
+
+  // iOS PWA
+  const isIOSStandalone = window.navigator.standalone === true;
+
+  return isStandaloneDisplay || isIOSStandalone;
+}
 
  async function loadLeaderboard(level = currentLevel) {
   setLoadingBoard(true);
@@ -245,11 +256,24 @@ const [running, setRunning] = useState(false);
     }
   }
 
-  const exitGame = () => {
-  if (window.confirm("Are you sure you want to leave the game?")) {
-    window.location.href = "/";
+const handleExit = () => {
+  if (isStandalonePWA()) {
+    // Installed as app (PWA)
+    // Browsers usually ignore window.close(), but we can try:
+    window.close();
+
+    // Fallback: show a simple “you can close the app now” screen
+    setRunning(false);
+    setSidebarOpen(false);
+    setGameOver(false);
+    setShowWelcomePopup(false);
+    // setExitMessage(true); // new piece of state if you want (optional)
+  } else {
+    // Normal web in browser: send them "outside" your app
+    window.location.href = "https://google.com"; // or your personal page
   }
 };
+
 
 
   const step = useCallback(() => {
@@ -481,7 +505,7 @@ const [running, setRunning] = useState(false);
 
         <button
   style={{ marginTop: 20, background: "#ff5555" }}
-  onClick={exitGame}
+   onClick={handleExit}
 >
   Exit Game
 </button>
