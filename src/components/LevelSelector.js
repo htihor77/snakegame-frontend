@@ -24,7 +24,10 @@ export default function LevelSelector({ currentLevel, onLevelChange, levelConfig
     setIsOpen(false);
   };
 
-  const currentLevelName = levelConfig?.name || "Unknown";
+ // const currentLevelName = levelConfig?.name || "Unknown";
+
+ const currentLevelName =levelConfig?.name || `Level ${currentLevel}`;
+
 
   return (
     <div style={{ position: "relative", display: "inline-block" }}>

@@ -4,7 +4,7 @@ export const LEVEL_4 = {
   description: "Multiple foods, obstacles everywhere!",
   boardSize: 26,
   cellSize: 15,
-  baseTick: 70,
+  baseTick: 90,
   speedMultiplier: 1.6,
   foodScore: 25,
   theme: {

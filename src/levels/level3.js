@@ -4,7 +4,7 @@ export const LEVEL_3 = {
   description: "Walls wrap around - stay focused!",
   boardSize: 24,
   cellSize: 16,
-  baseTick: 90,
+  baseTick: 120,
   speedMultiplier: 1.4,
   foodScore: 20,
   theme: {

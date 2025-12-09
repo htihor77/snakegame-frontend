@@ -235,7 +235,7 @@ const [running, setRunning] = useState(false);
         setError("✅ New best score!");
         setErrorType("success");
       } else {
-        setError(`⚠️ Keep going! Best: ${result.bestScore}`);
+        // setError(`⚠️ Keep going! Best: ${result.bestScore}`);
         setErrorType("warning");
       }
    await loadLeaderboard(currentLevel);
@@ -647,7 +647,8 @@ const [running, setRunning] = useState(false);
           <button onClick={restart} style={styles.btnDanger}>
             🔄
           </button>
-          {!isMobile && <LevelSelector currentLevel={currentLevel} onLevelChange={setCurrentLevel} levelConfig={levelConfig} />}
+          <LevelSelector currentLevel={currentLevel} onLevelChange={setCurrentLevel} />
+          {/* {!isMobile && <LevelSelector currentLevel={currentLevel} onLevelChange={setCurrentLevel} levelConfig={levelConfig} />} */}
         </div>
 
         {/* CANVAS */}

@@ -4,7 +4,7 @@ export const LEVEL_2 = {
   description: "Faster and trickier",
   boardSize: 22,
   cellSize: 18,
-  baseTick: 110,
+  baseTick: 160,
   speedMultiplier: 1.2,
   foodScore: 15,
   theme: {

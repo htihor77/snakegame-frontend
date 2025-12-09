@@ -4,7 +4,7 @@ export const LEVEL_1 = {
   description: "Master the basics",
   boardSize: 20,
   cellSize: 20,
-  baseTick: 150,
+  baseTick: 175,
   speedMultiplier: 1,
   foodScore: 10,
   theme: {

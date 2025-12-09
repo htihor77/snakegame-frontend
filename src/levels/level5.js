@@ -4,7 +4,7 @@ export const LEVEL_5 = {
   description: "Can you survive?",
   boardSize: 28,
   cellSize: 14,
-  baseTick: 50,
+  baseTick: 70,
   speedMultiplier: 2,
   foodScore: 50,
   theme: {
